@@ -14,12 +14,14 @@ export class PlayBarComponent implements OnInit {
 
   ngOnInit(): void {
    this.service.currentMessage.subscribe(message => {
-    this.serviceTest = message;
-    this.toggle();
+    // if(this.serviceTest != message){
+    //   this.toggle();
+    //   this.serviceTest = message;
+    // }
    })
   }
 
-  test = false;
+  test = true;
 
   toggle(){
     if(this.test){
@@ -30,12 +32,19 @@ export class PlayBarComponent implements OnInit {
     }
   }
 
+
+  triggerError() {
+    throw new Error('Sentry IO Test');
+  }
+
   stop() {
     this.test = true;
   }
   start() {
     this.test = false;
   }
+
+
 
   currentTrack: any = {
     trackName: "Let it Happen",

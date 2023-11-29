@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class PlayerService {
 
-  private messageSource = new BehaviorSubject('Testtsts');
+  private messageSource = new BehaviorSubject('Let it Happenth');
   currentMessage = this.messageSource.asObservable();
 
   trackname: string = '';
